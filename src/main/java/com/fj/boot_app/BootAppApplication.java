@@ -26,7 +26,7 @@ import com.fj.boot_app.configuration.MyConfig;
 @MapperScan(basePackages = {"com.fj.boot.app.**.dao"})
 // 属性配置类
 @EnableConfigurationProperties(MyConfig.class)
-// 扫描配置文件
+// 扫描属性配置文件
 @PropertySource({"classpath:jdbc.properties", "classpath:wxpay.properties"})
 // Servlet扫描
 @ServletComponentScan(basePackages = {"com.fj.boot.app.servlet"})
