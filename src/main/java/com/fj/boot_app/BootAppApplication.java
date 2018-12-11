@@ -7,14 +7,15 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.context.annotation.PropertySource;
 
 import com.fj.boot_app.configuration.MyConfig;
 
 
 /**
- * 
  * spring-boot启动类（在单元测的时候起作用）
+ *
  * @author ji_fei
  * 2018年9月9日 下午6:18:22
  * @version v1.0
@@ -30,10 +31,11 @@ import com.fj.boot_app.configuration.MyConfig;
 @PropertySource({"classpath:jdbc.properties", "classpath:wxpay.properties"})
 // Servlet扫描
 @ServletComponentScan(basePackages = {"com.fj.boot.app.servlet"})
+@EnableAspectJAutoProxy
 public class BootAppApplication {
-	
-	public static void main(String[] args) {
-		SpringApplication.run(BootAppApplication.class, args);
-		System.out.println();
-	}
+
+    public static void main(String[] args) {
+        SpringApplication.run(BootAppApplication.class, args);
+        System.out.println();
+    }
 }

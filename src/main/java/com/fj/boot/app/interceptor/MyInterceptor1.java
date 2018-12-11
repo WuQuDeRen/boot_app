@@ -16,6 +16,17 @@ public class MyInterceptor1 implements HandlerInterceptor {
     public boolean preHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o) throws Exception {
         _logger.info("this is MyInterceptor1 preHandle");
         // 只有返回true才会继续向下执行，返回false取消当前请求
+//        String name = httpServletRequest.getParameter("name");
+//        System.out.println("age: " + name);
+//        
+//        InputStreamReader reader = new InputStreamReader(httpServletRequest.getInputStream());
+//        BufferedReader bufferedReader = new BufferedReader(reader);
+//        String content = "";
+//        StringBuilder builder = new StringBuilder("");
+//        while ((content = bufferedReader.readLine()) != null) {
+//        	builder.append(content);
+//        }
+//        System.out.println("stream：" + builder.toString());
         return true;
     }
 
