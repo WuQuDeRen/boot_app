@@ -22,6 +22,7 @@ public class TestController {
 	
 	@RequestMapping(value = "/test/get_1", method = RequestMethod.GET)
 	public String get(@RequestParam String name) {
+		System.out.println("aaaf efefe fefeji fefe 飞机");
 		return "get";
 	}
 	
@@ -58,7 +59,8 @@ public class TestController {
 		ApplicationContext parentApplicationContext = applicationContext.getParent();
 		BeanFactory parentBeanFactory = applicationContext.getParentBeanFactory();
 		ConfigurableApplicationContext a = null;
-		
+
+		System.out.println("fe");
 		return "....";
 	}
 }
