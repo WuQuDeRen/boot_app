@@ -1,16 +1,19 @@
 package com.fj.boot_app;
 
+import com.fj.boot_app.configuration.MyConfig;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.boot.web.servlet.ServletComponentScan;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.context.annotation.PropertySource;
-
-import com.fj.boot_app.configuration.MyConfig;
+import org.springframework.web.client.RestTemplate;
 
 
 /**
@@ -32,6 +35,8 @@ import com.fj.boot_app.configuration.MyConfig;
 // Servlet扫描
 @ServletComponentScan(basePackages = {"com.fj.boot.app.servlet"})
 @EnableAspectJAutoProxy
+@EnableDiscoveryClient
+@EnableEurekaClient
 public class BootAppApplication {
 
     public static void main(String[] args) {
